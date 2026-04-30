@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../domain/entities/backtest_result.dart';
+import '../domain/entities/backtest_result.dart';
 import 'widgets/equity_curve_chart.dart';
 import 'widgets/trade_list_tile.dart';
-import '../../../../core/utils/number_formatter.dart';
+import '../../../core/utils/number_formatter.dart';
 
 class BacktestResultScreen extends StatelessWidget {
   static const routeName = '/backtest/result';

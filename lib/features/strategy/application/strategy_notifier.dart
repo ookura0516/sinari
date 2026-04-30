@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../domain/entities/strategy.dart';
-import '../../domain/repositories/strategy_repository.dart';
-import '../../infrastructure/datasources/sqlite_strategy_datasource.dart';
-import '../../infrastructure/repositories/strategy_repository_impl.dart';
-import '../../../../shared/providers/database_provider.dart';
+import '../domain/entities/strategy.dart';
+import '../domain/repositories/strategy_repository.dart';
+import '../infrastructure/datasources/sqlite_strategy_datasource.dart';
+import '../infrastructure/repositories/strategy_repository_impl.dart';
+import '../../../shared/providers/database_provider.dart';
 
 final strategyRepositoryProvider = Provider<StrategyRepository>((ref) {
   final db = ref.watch(databaseProvider);

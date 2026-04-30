@@ -1,14 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../domain/entities/backtest_result.dart';
-import '../../domain/engine/backtest_engine.dart';
-import '../../domain/repositories/backtest_repository.dart';
-import '../../infrastructure/datasources/sqlite_backtest_datasource.dart';
-import '../../infrastructure/repositories/backtest_repository_impl.dart';
-import '../../../price_data/application/price_data_notifier.dart';
-import '../../../strategy/domain/entities/strategy.dart';
-import '../../../../shared/providers/database_provider.dart';
+import '../domain/entities/backtest_result.dart';
+import '../domain/engine/backtest_engine.dart';
+import '../domain/repositories/backtest_repository.dart';
+import '../infrastructure/datasources/sqlite_backtest_datasource.dart';
+import '../infrastructure/repositories/backtest_repository_impl.dart';
+import '../../price_data/application/price_data_notifier.dart';
+import '../../strategy/domain/entities/strategy.dart';
+import '../../../shared/providers/database_provider.dart';
 
 final backtestRepositoryProvider = Provider<BacktestRepository>((ref) {
   final db = ref.watch(databaseProvider);

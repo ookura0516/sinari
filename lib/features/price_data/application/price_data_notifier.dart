@@ -1,14 +1,12 @@
 import 'package:csv/csv.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sqflite/sqflite.dart';
 
-import '../../domain/entities/instrument.dart';
-import '../../domain/entities/price_bar.dart';
-import '../../domain/repositories/price_data_repository.dart';
-import '../../infrastructure/datasources/sqlite_price_datasource.dart';
-import '../../infrastructure/repositories/price_data_repository_impl.dart';
-import '../../../../shared/providers/database_provider.dart';
+import '../domain/entities/instrument.dart';
+import '../domain/entities/price_bar.dart';
+import '../domain/repositories/price_data_repository.dart';
+import '../infrastructure/datasources/sqlite_price_datasource.dart';
+import '../infrastructure/repositories/price_data_repository_impl.dart';
+import '../../../shared/providers/database_provider.dart';
 
 final priceDataRepositoryProvider = Provider<PriceDataRepository>((ref) {
   final db = ref.watch(databaseProvider);

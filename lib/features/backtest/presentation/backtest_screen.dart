@@ -8,7 +8,7 @@ import '../../price_data/application/price_data_notifier.dart';
 import '../../strategy/application/strategy_notifier.dart';
 import '../../strategy/domain/entities/strategy.dart';
 import 'backtest_result_screen.dart';
-import '../../../../core/utils/number_formatter.dart';
+import '../../../core/utils/number_formatter.dart';
 
 class BacktestScreen extends ConsumerStatefulWidget {
   const BacktestScreen({super.key});
