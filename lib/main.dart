@@ -1,30 +1,18 @@
 import 'package:flutter/material.dart';
-import 'screens/title_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
-  runApp(const SinariApp());
-}
+import 'app/app.dart';
+import 'shared/providers/database_provider.dart';
 
-class SinariApp extends StatelessWidget {
-  const SinariApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '深淵の図書館',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1A0A2E),
-          brightness: Brightness.dark,
-        ),
-        scaffoldBackgroundColor: const Color(0xFF050510),
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Color(0xFFD4C5A9)),
-          bodyMedium: TextStyle(color: Color(0xFFD4C5A9)),
-        ),
-      ),
-      home: const TitleScreen(),
-    );
-  }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final database = await DatabaseHelper.open();
+  runApp(
+    ProviderScope(
+      overrides: [
+        databaseProvider.overrideWithValue(database),
+      ],
+      child: const SinariApp(),
+    ),
+  );
 }
