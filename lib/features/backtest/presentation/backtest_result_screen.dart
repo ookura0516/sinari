@@ -18,8 +18,16 @@ class BacktestResultScreen extends StatelessWidget {
     final dateFmt = DateFormat('yyyy/MM/dd');
     return Scaffold(
       appBar: AppBar(
-        title: Text('バックテスト結果'),
-        subtitle: Text('${dateFmt.format(result.startDate)} 〜 ${dateFmt.format(result.endDate)}'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('バックテスト結果'),
+            Text(
+              '${dateFmt.format(result.startDate)} 〜 ${dateFmt.format(result.endDate)}',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
